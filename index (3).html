@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TokoPedia - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Toko salsabila</h1>
+    <nav>
+      <button id="dashboardBtn">Dashboard</button>
+      <button id="cartBtn">Keranjang</button>
+      <button id="paymentBtn">Pembayaran</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="active">
+      <h2>Produk Tersedia</h2>
+      <div class="product-list" id="productList"></div>
+    </section>
+
+    <!-- Keranjang -->
+    <section id="cart">
+      <h2>Keranjang Belanja</h2>
+      <ul id="cartItems"></ul>
+      <button id="checkoutBtn">Lanjut ke Pembayaran</button>
+    </section>
+
+    <!-- Pembayaran -->
+    <section id="payment">
+      <h2>Metode Pembayaran</h2>
+      <form id="paymentForm">
+        <label>Metode Pembayaran:</label>
+        <select id="paymentMethod" required>
+          <option value="">--Pilih Metode--</option>
+          <option>OVO</option>
+          <option>GoPay</option>
+          <option>DANA</option>
+          <option>Transfer Bank</option>
+          <option>COD</option>
+        </select>
+
+        <label>Kurir Pengiriman:</label>
+        <select id="courier" required>
+          <option>JNE</option>
+          <option>J&T</option>
+          <option>SiCepat</option>
+        </select>
+
+        <label>Alamat Tujuan:</label>
+        <input type="text" id="address" value="SMK Cipatujah, Kec. Cipatujah, Kab. Tasikmalaya" readonly />
+
+        <button type="submit">Bayar Sekarang</button>
+      </form>
+
+      <div id="confirmation" class="hidden">
+        <h3>Pembayaran Berhasil ✅</h3>
+        <p>Nomor Resi Anda: <span id="resi"></span></p>
+        <div id="map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>✯ 2025 Toko salsabila modern ☺︎</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
